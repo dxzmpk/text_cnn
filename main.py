@@ -1,9 +1,8 @@
 from comet_ml import Experiment
 import torch.optim as optim
-from torchsummary import summary
 from Project import project
 from data import get_dataloaders
-from data.transformation import train_transform, val_transform
+# from data.transformation import train_transform, val_transform
 from TextCNN import Text_CNN
 from utils import device, show_dl
 from poutyne.framework import Model
@@ -23,8 +22,6 @@ logging.info(f'Using device={device} 🚀')
 document_vectors = doc2vec()
 train_dl, val_dl, test_dl = get_dataloaders(
     document_vectors,
-    val_transform=val_transform,
-    train_transform=train_transform,
     batch_size=params['batch_size'],
 )
 

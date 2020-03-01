@@ -29,7 +29,7 @@ def transter_embed_file():
     pickle.dump(word2idx, open(project.idx_dir, 'wb'))
 
 # Test
-# transter_embed_file()
+transter_embed_file()
 
 def get_datadict_vector(target_vocab):
     """

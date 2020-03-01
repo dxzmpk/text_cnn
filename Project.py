@@ -12,10 +12,10 @@ class Project:
     checkpoint_dir = base_dir / 'checkpoint'
     embedding_dir = base_dir/ 'dataset/embedding/glove.6B.50d.txt'
     bcolz_dir = base_dir/ 'dataset/embedding/6B.50.dat'
-    words_dir =  '/home/dongxiong/projects_py/text_cnn/dataset/embedding/6B.50_words.pkl'
-    idx_dir =  '/home/dongxiong/projects_py/text_cnn/dataset/embedding/6B.50_idx.pkl'
+    words_dir = base_dir/ 'dataset/embedding/6B.50_words.pkl'
+    idx_dir =  base_dir/'dataset/embedding/6B.50_idx.pkl'
     vector_dir =  base_dir/ 'dataset/embedding/6B.50_vecter.dat'
-    vocab_dir =  '/home/dongxiong/projects_py/text_cnn/dataset/embedding/vocab.pkl'
+    vocab_dir = base_dir/ 'dataset/embedding/vocab.pkl'
     def __post_init__(self):
         # create the directory if they does not exist
         self.data_dir.mkdir(exist_ok=True)
