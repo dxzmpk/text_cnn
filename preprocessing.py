@@ -11,7 +11,6 @@ def transter_embed_file():
     words = [] # 定义单词
     idx = 0 
     word2idx = {} # 将单词映射为索引
-    # vectors = bcolz.carray(np.zeros(1), rootdir = project.bcolz_dir)
 
     with open(project.embedding_dir, 'rb') as f:
         for l in f:
@@ -20,11 +19,7 @@ def transter_embed_file():
             words.append(word)
             word2idx[word] = idx
             idx += 1
-            # vect = np.array(line[1:]).astype(np.float)
-            # vectors.append(vect)
 
-    # vectors = bcolz.carray(vectors[1:].reshape((400000, 50)), rootdir=project.bcolz_dir, mode = 'w')
-    # vectors.flush()
     pickle.dump(words, open(project.words_dir, 'wb'))
     pickle.dump(word2idx, open(project.idx_dir, 'wb'))
 
